@@ -1,0 +1,27 @@
+{% include helpers.liquid %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"/>
+  <title>{% if page.title %}{{ page.title | append: ' - ' }}{% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ site.description}}"/>
+  <meta name="author" content="{{ site.author }}"/>
+  <link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico" type="image/x-icon"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <link rel="stylesheet" href="{{ bootstrap_url }}"/>
+  <link rel="stylesheet" href="{{ fontawesome_url }}"/>
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css"/>
+</head>
+<body>
+
+<div class="wrapper">
+  <div class="inner">
+    <header class="site-header clearfix">
+      <div class="avatar">
+        <a href="{{ site.baseurl }}/" title="首页"><img src="{{ site.baseurl }}/assets/images/logo.jpg" width="180" height="180" alt="" title="" /></a>
+      </div>
+
+      <h1 class="logo"><a href="{{ site.baseurl }}/" title="首页">{{ site.author }}</a></h1>
+
+      {% if is_home %}<p class="about-me">{{ site.author_info }}</p>{% endif %}
+    </header>
