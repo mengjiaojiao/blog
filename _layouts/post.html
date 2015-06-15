@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+<div class="breadcrumbs">
+  <a href="{{ site.baseurl }}/" title="首页">首页</a>
+  //
+  <a href="{{ site.baseurl }}/archive/" title="文章归档">文章归档</a>
+  //
+  {{ page.title }}
+</div>
+
+<article class="hentry entry post">
+  <header class="entry-header">
+    <h1 class="entry-title">{{ page.title }}</h1>
+    <p class="entry-meta">{{ site.author_cn }}发布于{{ page.date | date: '%Y年%-m月%-d日' }}</p>
+  </header>
+
+  <div class="entry-content">
+    {{ content }}
+  </div>
+
+  {% unless page.tags == empty %}
+    <ul class="entry-tags">
+      {% for tag in page.tags %}
+        {% assign tag_slug = tag | slugify %}
+        {% assign tag_name = tag | tag_name %}
+        <li><a class="btn btn-default btn-sm" href="{{ site.baseurl }}/tags/#{{ tag_slug }}-ref" title="{{ tag_name | escape }}">{{ tag_name }}</a></li>
+      {% endfor %}
+    </ul>
+  {% endunless %}
+</article>
+
+{% if page.previous or page.next %}
+<ul class="pager">
+  {% if page.previous %}
+  <li class="previous">
+    <a rel="prev" href="{{ page.previous.url | prepend: site.baseurl }}" title="{{ page.previous.title | escape }}">&laquo; 上一篇文章</a>
+  </li>
+  {% endif %}
+
+  {% if page.next %}
+  <li class="next">
+    <a rel="next" href="{{ page.next.url | prepend: site.baseurl }}" title="{{ page.next.title | escape }}">下一篇文章 &raquo;</a>
+  </li>
+  {% endif %}
+</ul>
+{% endif %}

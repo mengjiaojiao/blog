@@ -1,0 +1,22 @@
+---
+layout: page
+title: '话题'
+class: 'tags-page'
+permalink: '/tags/'
+---
+
+<p>
+  {% for tag in site.tags %}
+    <a id="{{ tag[0] | slugify }}-tag" class="btn btn-default btn-sm" href="#{{ tag[0] | slugify }}-ref" title="{{ tag[0] | tag_name | escape }}">{{ tag[0] | tag_name }}</a>
+  {% endfor %}
+</p>
+
+
+{% for tag in site.tags %}
+  <h2 id="{{ tag[0] | slugify }}-ref">{{ tag[0] | tag_name }}</h2>
+  <ul>
+  {% for post in tag[1] %}
+    <li><a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.title | escape }}">{{ post.title }}</a></li>
+  {% endfor %}
+  </ul>
+{% endfor %}

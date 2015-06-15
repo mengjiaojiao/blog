@@ -1,0 +1,10 @@
+# Site settings
+title: 阿唐博客
+author: 阿唐
+author_info: php程序员，网络安全爱好者。
+email: tangping.php@qq.com
+description: 阿唐的个人网站
+baseurl: "/blog"
+#url: "http://blog.itxti.net"
+# Converter settings
+
