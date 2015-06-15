@@ -4,7 +4,12 @@ author: 阿唐
 author_info: php程序员，网络安全爱好者。
 email: tangping.php@qq.com
 description: 阿唐的个人网站
+<<<<<<< HEAD
 baseurl: ""
 url: "http://blog.itxti.net"
+=======
+baseurl: "/blog"
+#url: "http://blog.itxti.net"
+>>>>>>> 2d6870456f61463f0ef0b73d01ba43490389b8fb
 # Converter settings
 
