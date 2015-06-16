@@ -1,7 +1,7 @@
 # Site settings
 title: 子遥博客
 author: 子遥
-author_info: just laravel。
+author_info: just laravel
 email: yangyaohappy@outlook.com
 description: 子遥的个人网站
 baseurl: "/blog"
