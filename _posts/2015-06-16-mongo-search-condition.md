@@ -8,15 +8,20 @@ tags: ['mongo']
 ##比较查询
 
 $gt:大于
+
 $lt:小于
+
 $gte:大于或等于
+
 $lte:小于或等于
+
 $ne:不等于
 
 
 ###in查询
 
 `db.test.find({"name":{"$in":["stephen","stephen1"]}})`
+
 php的用法： 
 
 `$querys = ["number"=>['$in' => [1,2,9]]]`
