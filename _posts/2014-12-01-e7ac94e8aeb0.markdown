@@ -1,0 +1,107 @@
+---
+author: 269586320@qq.com
+comments: true
+date: 2014-12-01 09:02:47+00:00
+layout: post
+slug: '%e7%ac%94%e8%ae%b0'
+title: 笔记
+wordpress_id: 53
+categories:
+- CodeIgniter
+---
+
+sudo /usr/sbin/nginx -s reload
+sudo /etc/init.d/php5-fpm restart
+
+ps aux | grep php 看下管道
+
+sudo kill -USR2 8572
+
+
+
+vim ~/.bashrc  每次登陆都必须执行的命令可以放这里
+
+cp -r
+
+设定用户和组
+
+sudo useradd www -g 1002 -u 1002 -m
+
+u撤销
+
+shift +v然后 d
+
+
+
+ngnix
+
+server {
+listen 80;
+#listen [::]:80 default_server ipv6only=on;
+
+#root /usr/share/nginx/html;
+root /var/www/fitshike2/public;
+index index.php index.html index.htm;
+
+# Make site accessible from http://localhost/
+server_name admin.fitshike2dev.com;
+
+location / {
+index index.php;
+# First attempt to serve request as file, then
+# as directory, then fall back to displaying a 404.
+try_files $uri /index.php?$args;
+#try_files $uri $uri/ /index.php?$query_string;
+# Uncomment to enable naxsi on this location
+# include /etc/nginx/naxsi.rules
+}
+
+location ~ \.php$ {
+try_files $uri /index.php =404;
+fastcgi_split_path_info ^(.+\.php)(/.+)$;
+fastcgi_pass unix:/var/run/php5-fpm.sock;
+fastcgi_index index.php;
+fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+fastcgi_param APPLICATION_ENV dev;
+include fastcgi_params;
+}
+
+# Only for nginx-naxsi used with nginx-naxsi-ui : process denied requests
+#location /RequestDenied {
+# proxy_pass http://127.0.0.1:8080;
+#}
+#error_page 404 /404.html;
+# redirect server error pages to the static page /50x.html
+#
+#error_page 500 502 503 504 /50x.html;
+#location = /50x.html {
+# root /usr/share/nginx/html;
+#}
+
+# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+#
+#location ~ \.php$ {
+# fastcgi_split_path_info ^(.+\.php)(/.+)$;
+# # NOTE: You should have "cgi.fix_pathinfo = 0;" in php.ini
+#
+# # With php5-cgi alone:
+# fastcgi_pass 127.0.0.1:9000;
+# # With php5-fpm:
+# fastcgi_pass unix:/var/run/php5-fpm.sock;
+# fastcgi_index index.php;
+# include fastcgi_params;
+#}
+
+# deny access to .htaccess files, if Apache's document root
+# concurs with nginx's one
+#
+#location ~ /\.ht {
+# deny all;
+#}
+}
+
+vim 文档
+
+http://blog.csdn.net/niushuai666/article/details/7275406
+
+
