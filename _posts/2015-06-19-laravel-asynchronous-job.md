@@ -18,7 +18,7 @@ tags: ['laravel']
 1. controller中调用。不行
 
 <code>
-	\Artisan::call('card:tools',[
+	Artisan::call('card:tools',[
     	'--method'=>'modifyBatch',
     	'--batchId'=>$data['batchId'],
     	'--batchExpireDate'=>$data['batchExpireDate'],
@@ -30,7 +30,7 @@ tags: ['laravel']
 2. 使用SSH 包 可行，但是要配置 remote.php
 
 <code>
-	\SSH::run( array(
+	SSH::run( array(
     	'cd ../' .app_path(),
     	'card:tools --method=modifyBatch --batchId='.$data[ 'batchId'].' --batchExpireDate='. $data['batchExpireDate']. ' --mutex='.$data[ 'mutex'],
 	));
