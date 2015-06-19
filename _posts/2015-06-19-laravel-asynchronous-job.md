@@ -14,7 +14,7 @@ tags: ['laravel']
 
 ### 4.2的有以下的解决方案
 
-1. controller中调用。`不行`
+1. controller中调用。不行
 
 
 	\Artisan::call('card:tools',[
@@ -26,7 +26,7 @@ tags: ['laravel']
 
 
 
-2. 使用SSH 包 `可行，但是要配置 remote.php`
+2. 使用SSH 包 可行，但是要配置 remote.php
 
 
 	\SSH::run( array(
@@ -35,7 +35,7 @@ tags: ['laravel']
 	));
 
 
-3. 最佳方案，还是 `popen`
+3. 最佳方案，还是 popen
 
 
 	$phpBin=PHP_BINDIR.'/php';
