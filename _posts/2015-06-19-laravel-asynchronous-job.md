@@ -8,9 +8,10 @@ tags: ['laravel']
 
 ### 5.0版本可以直接。
 
-
+<code>
 	$process = new Process('cd ' . base_path() . ' && php 	artisan migrate --seed');
 	$process->run();
+</code>
 
 ### 4.2的有以下的解决方案
 
@@ -27,8 +28,8 @@ tags: ['laravel']
 </code>
 
 2. 使用SSH 包 可行，但是要配置 remote.php
-<code>
 
+<code>
 	\SSH::run( array(
     	'cd ../' .app_path(),
     	'card:tools --method=modifyBatch --batchId='.$data[ 'batchId'].' --batchExpireDate='. $data['batchExpireDate']. ' --mutex='.$data[ 'mutex'],
@@ -42,8 +43,6 @@ tags: ['laravel']
 	$artisan=base_path().'/artisan';
 	$command='card:tools --method=modifyBatch --batchId='.$actData[ 'batchId'].' --batchExpireDate='. $actData['batchExpireDate']. ' --mutex='.$actData[ 'mutex'].'';
 	pclose( popen($phpBin.' '.$artisan.' '.$command .' &','r'));
-
-
 </code>
 
 
