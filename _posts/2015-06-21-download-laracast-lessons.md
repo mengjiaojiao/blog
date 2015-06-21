@@ -4,7 +4,7 @@ title: 下载laracasts视频
 tags: ['laracasts']
 ---
 
-1. 使用 `iamfreee/laracasts-downloader`
+* 使用 `iamfreee/laracasts-downloader`
 
 <pre>
 
@@ -14,7 +14,7 @@ tags: ['laracasts']
 
 
 
-2. 安装依赖 
+* 安装依赖 
 
 <pre>
 	
@@ -24,7 +24,7 @@ tags: ['laracasts']
 </pre>
 
 
-3. 修改配置
+* 修改配置
 
 <pre>
 
@@ -35,7 +35,7 @@ tags: ['laracasts']
 
 </pre>
 
-4. 运行下载
+* 运行下载
 
 <pre>
 
@@ -43,11 +43,11 @@ tags: ['laracasts']
 
 </pre>
 
-5. 使用中的问题
+* 使用中的问题
 
 如果突然下载变得很慢，可以关闭脚本，重启下载。这样快很多。
 
-6. 如何优化、
+* 如何优化、
 
 做个多线程下载的，但是我想我也不会有时间去`pr`
 
