@@ -1,19 +1,19 @@
 ---
 layout: default
 ---
-
-<div class="breadcrumbs">
-  <a href="{{ site.baseurl }}/" title="首页">首页</a>
-  //
-  {{ page.title }}
+<div class="post-area post">
+    <header>
+        <h1>{{ page.title }}</h1>
+    </header>
+    <hr>
+    <article class="page-content">
+        {{ content }}
+    </article>
 </div>
-
-<article class="hentry entry page{% if page.class %}{{ page.class | prepend: ' ' }}{% endif %}">
-  <header class="entry-header">
-    <h1 class="entry-title">{{ page.title }}</h1>
-  </header>
-
-  <div class="entry-content">
-    {{ content }}
-  </div>
-</article>
+<div class="post-area post comment">
+    <!-- 多说评论框 start -->
+    
+    <div class="ds-thread" data-thread-key="{{ page.id }}" data-title="{{ page.title }}" data-url="gaohaoyang.github.io{{ page.url }}"></div>
+    
+    <!-- 多说评论框 end -->
+</div>
