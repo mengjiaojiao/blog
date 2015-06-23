@@ -1,14 +1,6 @@
 ---
-layout: default
+profile: true
 ---
-<section class="post-list">
-  <h2 class="section-title"><span>最新文章</span></h2>
-  <ul>
-  {% for post in site.posts limit: 10 %}
-    <li><span>{{ post.date | date: "%b %d, %Y" }}</span> &raquo; <a rel="bookmark" href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title | escape }}">{{ post.title }}</a></li>
-  {% endfor %}
-  </ul>
-  <p class="more"><a href="{{ site.baseurl }}/archive/" title="文章归档">更多文章 &raquo;</a></p>
-</section>
 
-
+{% include post-list.html %}
+{% include footer.html %}
