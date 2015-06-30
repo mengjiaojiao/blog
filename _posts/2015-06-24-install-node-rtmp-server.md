@@ -34,5 +34,3 @@ tags: ['node']
 	rtsp://192.168.199.165:8080/live/STREAM_NAME
 
 5.客户端接受
-
-
