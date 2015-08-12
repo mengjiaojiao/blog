@@ -7,4 +7,28 @@ description: 子遥的个人网站
 baseurl: "/blog"
 #url: "http://blog.itxti.net"
 # Converter settings
+# Build settings
+markdown: kramdown
+sass:
+  style: compressed
+gems:
+  - jekyll-sitemap
+# Sidebar filter
+# Choose 'tag' or 'category' as filter in sidebar.
+filter: 'tag'
+
+# Social account
+# twitter:  username
+# weibo:    ID
+# github:   username
+# codepen:  username
+# dribbble: username
+
+
+# Comment
+# disqus_shortname: discussion_shortname
+
+
+# Google Analytics
+# google_analytics: tracking_ID
 
